@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Baskervville:ital@0;1&family=Inter:wght@100..900&family=Jersey+10+Charted&family=Kalnia&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Rubik+Doodle+Shadow&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/decryption.css') }}"
+    />
+
+    <title>Sentiment Analyzer</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar">
+        <div>
+          <a href="#" class="websiteName"> CipherGaurd </a>
+          <a href="#">Features</a>
+          <a href="#">Settings</a>
+          <a href="#">About</a>
+          <a href="#">Help</a>
+          <a href="#">Contact</a>
+        </div>
+        <div>
+          <a href="/" class="homepage">Back to Homepage</a>
+        </div>
+      </nav>
+
+      <div class="about-page">
+        <p class="pagename">Decryption</p>
+        <p class="sub-caption">
+          Unlock Your Information Safely with Cutting-Edge Decryption Methods
+        </p>
+      </div>
+
+      <div class="why-decryption">
+        <div>
+          <img
+            class="question-mark"
+            src="{{ url_for('static', filename='assets/circle.png') }}"
+            alt="Example Image"
+          />
+          <p>Why <span>Decryption</span>?</p>
+          <p>
+            Decryption plays a vital role in data security by reverting
+            encrypted data back to its original, readable format using the
+            appropriate decryption key. This process is crucial for accessing
+            and utilizing encrypted information securely. Whether it involves
+            retrieving personal records, financial data, or sensitive corporate
+            information, decryption ensures that authorized users can access the
+            content they need while upholding data integrity and
+            confidentiality. By reversing the encryption process, decryption
+            safeguards against unauthorized access, enabling legitimate users to
+            interact with data effectively while maintaining privacy and
+            adhering to regulatory standards.
+          </p>
+        </div>
+        <img
+          src="{{ url_for('static', filename='assets/browser.png') }}"
+          alt="Example Image"
+        />
+      </div>
+      <div class="how-it-works-div">
+        <img
+          class="question-mark"
+          src="{{ url_for('static', filename='assets/circle.png') }}"
+          alt="Example Image"
+        />
+        <p class="how-it-works">How it works?</p>
+        <div class="steps">
+          <div>
+            <img
+              class="steps-number"
+              src="{{ url_for('static', filename='assets/one.png') }}"
+              alt="Example Image"
+            />
+            <p class="step-name">Select Your Decryption Algorithm:</p>
+            <p>
+              Choose the appropriate decryption algorithm corresponding to the
+              encryption method used to encrypt your data. Options include AES
+              (Advanced Encryption Standard), RSA (Rivest–Shamir–Adleman), DES
+              (Data Encryption Standard), and more. Select the algorithm that
+              matches the encryption to decrypt your data accurately.
+            </p>
+          </div>
+          <div>
+            <img
+              class="steps-number"
+              src="{{ url_for('static', filename='assets/two.png') }}"
+              alt="Example Image"
+            />
+            <p class="step-name">Input Your Encrypted Data:</p>
+            <p>
+              Enter the encrypted text into the text box or upload a file
+              containing your encrypted data. Our platform supports various file
+              formats, ensuring seamless decryption regardless of the source.
+            </p>
+          </div>
+          <div>
+            <img
+              class="steps-number"
+              src="{{ url_for('static', filename='assets/three.png') }}"
+              alt="Example Image"
+            />
+            <p class="step-name">Enter Your Decryption Key:</p>
+            <p>
+              Provide the decryption key that was used to encrypt the data
+              originally. This key is essential for reversing the encryption
+              process and recovering the original, readable data.
+            </p>
+          </div>
+          <div>
+            <img
+              class="steps-number"
+              src="{{ url_for('static', filename='assets/four.png') }}"
+              alt="Example Image"
+            />
+            <p class="step-name">Decrypted Data:</p>
+            <p>
+              After decryption, your data will be displayed in its original,
+              readable format. You can download the decrypted data or copy it to
+              your clipboard for further use.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="simulate-algorithms">
+        <p class="how-it-works simulation">
+          <span>Decryption</span> Simulation
+        </p>
+        <form
+          id="decryptionForm"
+          enctype="multipart/form-data"
+          action="/decrypt"
+          method="post"
+        >
+          <div class="input-options">
+            <label for="inputType">Select Input Type:</label>
+            <select
+              id="inputType"
+              name="inputType"
+              class="animated-dropdown"
+              onchange="toggleInputType()"
+            >
+              <option value="text">Text</option>
+              <option value="file">File</option>
+            </select>
+          </div>
+
+          <div id="textInput" class="form-group">
+            <label for="textData">Enter Encrypted Text:</label><br />
+            <textarea id="textData" name="data" rows="4" cols="50"></textarea
+            ><br />
+            <button
+              style="
+                padding: 0 10px 0 10px;
+                background-color: #149414;
+                border: 1px solid #149414;
+                color: #f8f9fa;
+                font-weight: 500;
+              "
+              id="convertToHex"
+              onclick="convertTextToHex()"
+            >
+              Convert to Hex
+            </button>
+            <button
+              style="
+                padding: 0 10px 0 10px;
+                background-color: #149414;
+                border: 1px solid #149414;
+                color: #f8f9fa;
+                font-weight: 500;
+              "
+              id="convertToText"
+              onclick="convertHexToText()"
+            >
+              Convert to Text
+            </button>
+          </div>
+
+          <div id="fileInput" class="form-group" style="display: none">
+            <label for="fileData">Upload Encrypted File:</label>
+            <input type="file" id="fileData" name="fileData" />
+          </div>
+
+          <div class="input-options">
+            <label for="decryptionAlgorithm"
+              >Select Decryption Algorithm:</label
+            >
+            <select
+              id="decryptionAlgorithm"
+              name="algorithm"
+              class="animated-dropdown"
+            >
+              <option value="AES">AES</option>
+              <option value="DES">DES</option>
+              <option value="3DES">Triple DES</option>
+              <option value="Blowfish">Blowfish</option>
+              <option value="RC4">RC4</option>
+              <option value="Caesar">Caesar</option>
+              <option value="Railfence">Rail Fence</option>
+              <option value="ColumnarTransposition">
+                Columnar Transposition
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="decryptionKey">Enter Decryption Key:</label>
+            <input type="text" id="decryptionKey" name="key" />
+          </div>
+
+          <button type="submit" class="decrypt-button">Decrypt</button>
+        </form>
+
+        <div
+          style="
+            margin-left: 35px;
+            font-weight: 600;
+            font-family: 'Baskervville';
+            font-size: 20px;
+            margin-bottom: 20px;
+            display: none;
+          "
+          id="decryptedText"
+          class="result"
+        >
+          <label style="color: #149414" for="decryptedOutput"
+            >Decrypted Text:</label
+          ><br />
+          <textarea id="decryptedOutput" rows="4" cols="50" readonly></textarea
+          ><br />
+          <button
+            style="
+              padding: 0 10px 0 10px;
+              background-color: #149414;
+              border: 1px solid #149414;
+              color: #f8f9fa;
+              font-weight: 500;
+            "
+            id="convertToTextButton"
+            onclick="convertToText()"
+          >
+            Convert to Text
+          </button>
+          <button
+            style="
+              padding: 0 10px 0 10px;
+              background-color: #149414;
+              border: 1px solid #149414;
+              color: #f8f9fa;
+              font-weight: 500;
+            "
+            id="convertToHexButton"
+            onclick="convertToHex()"
+          >
+            Convert to Hex
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Include decryption.js -->
+    <script src="{{ url_for('static', filename='js/decryption.js') }}"></script>
+  </body>
+</html>

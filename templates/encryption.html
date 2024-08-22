@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Baskervville:ital@0;1&family=Inter:wght@100..900&family=Jersey+10+Charted&family=Kalnia&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Rubik+Doodle+Shadow&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/encryption.css') }}"
+    />
+
+    <title>Sentiment Analyzer</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar">
+        <div>
+          <a href="#" class="websiteName"> CipherGaurd </a>
+          <a href="#">Features</a>
+          <a href="#">Settings</a>
+          <a href="#">About</a>
+          <a href="#">Help</a>
+          <a href="#">Contact</a>
+        </div>
+        <div>
+          <a href="/" class="homepage">Back to Homepage</a>
+        </div>
+      </nav>
+
+      <div class="about-page">
+        <p class="pagename">Encryption</p>
+        <p class="sub-caption">
+          Secure Your Data with Advanced Encryption Technology
+        </p>
+      </div>
+
+      <div class="why-encryption">
+        <div>
+          <img
+            class="question-mark"
+            src="{{ url_for('static', filename='assets/circle.png') }}"
+            alt="Example Image"
+          />
+          <p>Why <span>Encryption</span>?</p>
+          <p>
+            Encryption is a critical component of data security. It transforms
+            readable data into a scrambled format that can only be understood if
+            decrypted with the correct key. This process is essential for
+            protecting sensitive information from unauthorized access, cyber
+            threats, and data breaches. Whether it's personal data, financial
+            information, or confidential corporate records, encryption ensures
+            that your information remains private and secure. By making data
+            unreadable to those without authorization, encryption helps maintain
+            the integrity and confidentiality of information, upholding privacy
+            and compliance with regulatory requirements.
+          </p>
+        </div>
+        <img
+          src="{{ url_for('static', filename='assets/encrypted.png') }}"
+          alt="Example Image"
+        />
+      </div>
+      <div class="how-it-works-div">
+        <img
+          class="question-mark"
+          src="{{ url_for('static', filename='assets/circle.png') }}"
+          alt="Example Image"
+        />
+        <p class="how-it-works">How it works?</p>
+        <div class="steps">
+          <div>
+            <img
+              class="steps-number"
+              src="{{ url_for('static', filename='assets/one.png') }}"
+              alt="Example Image"
+            />
+            <p class="step-name">Select Your Encryption Algorithm:</p>
+            <p>
+              Choose from a range of top-tier encryption algorithms to ensure
+              maximum security for your data. Options include AES (Advanced
+              Encryption Standard), RSA (Rivest–Shamir–Adleman), DES (Data
+              Encryption Standard), and more. Each algorithm has its strengths,
+              so choose the one that best fits your security needs.
+            </p>
+          </div>
+          <div>
+            <img
+              class="steps-number"
+              src="{{ url_for('static', filename='assets/two.png') }}"
+              alt="Example Image"
+            />
+            <p class="step-name">Input Your Data:</p>
+            <p>
+              Enter the text you wish to encrypt directly into the text box or
+              upload a file containing your data. Our platform supports a
+              variety of file formats, ensuring compatibility and convenience.
+            </p>
+          </div>
+          <div>
+            <img
+              class="steps-number"
+              src="{{ url_for('static', filename='assets/three.png') }}"
+              alt="Example Image"
+            />
+            <p class="step-name">Set Your Encryption Key:</p>
+            <p>
+              Provide your encryption key, which will be used to encrypt your
+              data. Keep your key secure, as it will be necessary for
+              decryption.
+            </p>
+          </div>
+          <div>
+            <img
+              class="steps-number"
+              src="{{ url_for('static', filename='assets/four.png') }}"
+              alt="Example Image"
+            />
+            <p class="step-name">Encrypt:</p>
+            <p>
+              Once all information is provided, click the "Encrypt" button. Our
+              system will process your data using the selected algorithm and
+              key, securely encrypting it.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="simulate-algorithms">
+        <p class="how-it-works simulation">
+          <span>Encryption</span> Simulation
+        </p>
+
+        <form
+          id="encryptionForm"
+          enctype="multipart/form-data"
+          action="/encrypt"
+          method="post"
+        >
+          <div class="input-options">
+            <label for="inputType">Select Input Type:</label>
+            <select id="inputType" name="inputType" class="animated-dropdown">
+              <option value="text">Text</option>
+              <option value="file">File</option>
+            </select>
+          </div>
+
+          <div id="textInput" class="form-group">
+            <label for="textData">Enter Text:</label><br />
+            <textarea id="textData" name="data" rows="4" cols="50"></textarea>
+          </div>
+
+          <div id="fileInput" class="form-group" style="display: none">
+            <label for="fileData">Upload File:</label>
+            <input type="file" id="fileData" name="fileData" />
+          </div>
+
+          <div class="input-options">
+            <label for="encryptionAlgorithm"
+              >Select Encryption Algorithm:</label
+            >
+            <select
+              id="encryptionAlgorithm"
+              name="algorithm"
+              class="animated-dropdown"
+            >
+              <option value="AES">AES</option>
+              <option value="DES">DES</option>
+              <option value="3DES">Triple DES</option>
+              <option value="Blowfish">Blowfish</option>
+              <option value="RC4">RC4</option>
+              <option value="Caesar">Caesar</option>
+              <!-- <option value="Hill">Hill</option>
+          <option value="Playfair">Playfair</option>
+          <option value="Vernam">Vernam</option> -->
+              <option value="Railfence">Rail Fence</option>
+              <option value="ColumnarTransposition">
+                Columnar Transposition
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="encryptionKey">Enter Encryption Key:</label>
+            <input type="text" id="encryptionKey" name="key" />
+          </div>
+
+          <button type="submit" class="encrypt-button">Encrypt</button>
+        </form>
+
+        <div
+          style="
+            margin-left: 35px;
+            font-weight: 600;
+            font-family: 'Baskervville';
+            font-size: 20px;
+            margin-bottom: 20px;
+            display: none;
+          "
+          id="encryptedText"
+          class="result"
+        >
+          <label
+            style="color: #149414"
+            class="encrypted-text"
+            for="encryptedOutput"
+            >Encrypted Text:</label
+          >
+          <br />
+          <textarea id="encryptedOutput" rows="4" cols="50" readonly></textarea
+          ><br />
+          <button
+            style="
+              padding: 0 10px 0 10px;
+              background-color: #149414;
+              border: 1px solid #149414;
+              color: #f8f9fa;
+              font-weight: 500;
+            "
+            id="convertToTextButton"
+          >
+            Convert to Text
+          </button>
+          <button
+            style="
+              padding: 0 10px 0 10px;
+              background-color: #149414;
+              border: 1px solid #149414;
+              color: #f8f9fa;
+              font-weight: 500;
+            "
+            id="convertToHexButton"
+          >
+            Convert to Hex
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Include encryption.js -->
+    <script src="{{ url_for('static', filename='js/encryption.js') }}"></script>
+  </body>
+</html>

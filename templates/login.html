@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Design by foolishdeveloper.com -->
+    <title>CipherGaurd.com</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Baskervville:ital@0;1&family=Inter:wght@100..900&family=Jersey+10+Charted&family=Kalnia&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Rubik+Doodle+Shadow&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/login.css') }}"
+    />
+  </head>
+  <body>
+    <div class="website">
+      <a href="#" class="websiteName"> CipherGaurd </a>
+    </div>
+    <img
+      src="{{ url_for('static', filename='assets/undraw_programming_re_kg9v.svg') }}"
+      alt=""
+    />
+
+    <div>
+      <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+      </div>
+      <form action="{{ url_for('login') }}" method="post">
+        <h3>Login Here</h3>
+
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required /><br />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required /><br />
+        <button type="submit">Login</button>
+        <div class="social">
+          <div class="go"><i class="fab fa-google"></i> Google</div>
+          <div class="fb"><i class="fab fa-facebook"></i> Facebook</div>
+        </div>
+      </form>
+    </div>
+
+    <!-- <script>
+      // Define a JavaScript variable with the warning message
+      var warningMessage = "{{ session.pop('warning_message', '') }}";
+
+      // Check if the warning message is not empty and display the alert
+      if (warningMessage) {
+        alert(warningMessage);
+      }
+    </script> -->
+  </body>
+</html>
