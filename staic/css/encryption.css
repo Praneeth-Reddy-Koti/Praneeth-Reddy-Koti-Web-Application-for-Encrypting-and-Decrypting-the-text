@@ -1,0 +1,321 @@
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 
+96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 
+52 / 62 / 74 / 86 / 98
+*/
+
+/* MAIN COLOR: #087f5b
+   GREY COLOR: #343a40 
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* font-family: "Inter", sans-serif; */
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  color: #343a40;
+}
+
+nav {
+  margin-top: 44px;
+  display: flex;
+}
+
+nav div:first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.websiteName:link {
+  font-family: "Jersey 10 Charted", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.1;
+  color: #149414;
+  padding-right: 10px;
+}
+
+.websiteName:visited {
+  color: #149414;
+}
+
+.websiteName:hover {
+  color: #149414;
+}
+
+.websiteName:active {
+  color: #149414;
+}
+
+nav a:link {
+  font-size: 20px;
+  color: #343a40;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:visited {
+  color: #343a40;
+}
+
+nav a:hover {
+  transition: background-color 0.3s, color 0.3s;
+  color: #149414;
+}
+
+.homepage {
+  padding: 16px 20px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  color: #149414 !important;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: 500;
+  border: 1px solid #149414;
+}
+
+.homepage:hover {
+  background-color: #149414;
+  color: #f8f9fa !important;
+}
+
+.about-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 100px;
+  margin-bottom: 70px;
+}
+
+.pagename {
+  font-size: 60px;
+  color: #333;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.2;
+  font-family: "Baskervville", serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #149414;
+}
+
+.sub-caption {
+  font-family: "Noto Serif", serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 22px;
+  color: #0e6b0e;
+}
+
+.why-encryption {
+  display: flex;
+  gap: 100px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.why-encryption div {
+  width: 600px;
+  position: relative;
+  align-self: center;
+}
+
+.why-encryption div p:nth-of-type(1) {
+  font-size: 30px;
+  font-weight: 600;
+  border-bottom: 4px solid #149414;
+  border-top: 4px solid #149414;
+  display: inline-block;
+}
+
+.why-encryption div img {
+  height: 40px;
+  position: absolute;
+  left: -50px;
+  top: 3px;
+}
+
+.why-encryption div p:nth-of-type(1) span {
+  color: #149414;
+}
+
+.why-encryption div p:nth-of-type(2) {
+  text-align: justify;
+  font-size: 18px;
+}
+
+.why-encryption img {
+  height: 400px;
+}
+
+.how-it-works-div {
+  margin-top: 50px;
+  position: relative;
+}
+
+.how-it-works-div img {
+  height: 40px;
+  position: absolute;
+  left: -5px;
+  top: 5px;
+}
+
+.how-it-works {
+  font-size: 30px;
+  font-weight: 600;
+  border-bottom: 4px solid #149414;
+  border-top: 4px solid #149414;
+  display: inline-block;
+  margin-left: 45px;
+}
+
+.step-name {
+  color: #149414;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 100px;
+  row-gap: 30px;
+  justify-items: center;
+  /* align-items: center; */
+  margin-top: 10px;
+}
+
+.steps div {
+  position: relative;
+  width: 500px;
+}
+
+.steps div p {
+  text-align: justify;
+}
+
+.steps div img:nth-of-type(1) {
+  height: 30px;
+  position: absolute;
+  left: -40px;
+  top: 1px;
+}
+/* ************************************************** */
+
+.simulation {
+  font-size: 30px;
+  font-weight: 600;
+  border-bottom: 4px solid #149414;
+  border-top: 4px solid #149414;
+  display: inline-block;
+  margin-left: 35px;
+}
+
+.simulation span {
+  color: #149414;
+}
+
+form {
+  margin-left: 35px;
+  font-weight: 600;
+  font-family: "Baskervville", serif;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.input-options label {
+  color: #149414;
+}
+
+.input-options label:nth-of-type(1) {
+  color: #149414;
+  margin-bottom: 20px;
+}
+
+#textInput label {
+  color: #149414;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  color: #149414;
+  margin-bottom: 0 !important;
+}
+
+.form-group #textData {
+  margin-bottom: 20px;
+}
+
+/* General styling for the dropdown */
+.animated-dropdown {
+  padding: 8px 12px;
+  background: #ffffff;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.animated-dropdown:hover,
+.animated-dropdown:focus {
+  border-color: #149414;
+  box-shadow: 0 2px 8px rgba(20, 148, 20, 0.3);
+}
+
+textarea,
+.form-group input {
+  background: #ffffff;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+textarea:hover,
+textarea:focus .form-group input:hover,
+.form-group input:focus {
+  border-color: #149414;
+  box-shadow: 0 2px 8px rgba(20, 148, 20, 0.3);
+}
+
+.encrypt-button {
+  padding: 10px 14px;
+  background-color: #149414;
+  border-radius: 1000px;
+  color: #f8f9fa !important;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: 500;
+  font-size: 20px;
+  text-decoration: none;
+  border: 1px solid #149414;
+  font-family: "Noto Serif", serif !important;
+}
+
+.encrypt-button:visited,
+.encrypt-button:active {
+  color: #edf6f9;
+}
+
+.encrypt-button:hover {
+  background-color: #f8f9fa;
+  color: #149414 !important;
+}

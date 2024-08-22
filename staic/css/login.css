@@ -1,0 +1,203 @@
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f8f9fa;
+}
+
+body img {
+  height: 400px;
+  margin-top: 280px;
+  margin-left: 180px;
+}
+
+.website {
+  position: relative;
+}
+
+.websiteName:link {
+  font-family: "Jersey 10 Charted", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 100px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.1;
+  color: #149414;
+  padding-right: 10px;
+  position: absolute;
+  top: 130px;
+  left: 245px;
+}
+
+.websiteName:visited {
+  color: #149414;
+}
+
+.websiteName:hover {
+  color: #149414;
+}
+
+.websiteName:active {
+  color: #149414;
+}
+
+.background {
+  width: 430px;
+  height: 520px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+.background .shape {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  border-radius: 50%;
+}
+.shape:first-child {
+  background: linear-gradient(#149414, #f8f9fa);
+  left: 300px;
+  top: -80px;
+}
+.shape:last-child {
+  background: linear-gradient(to left, #149414, #f8f9fa);
+  right: -470px;
+  bottom: -80px;
+}
+form {
+  height: 520px;
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.13);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 50px 35px;
+  margin-left: 400px;
+}
+form * {
+  font-family: "Poppins", sans-serif;
+  color: #000;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
+form h3 {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
+  font-family: "Baskervville", serif;
+  font-weight: 600;
+  color: #149414;
+}
+
+form label {
+  color: #149414;
+  font-weight: 600;
+  font-family: "Baskervville", serif;
+}
+
+label:nth-of-type(1) {
+  display: block;
+  margin-top: 40px;
+  font-size: 20px;
+  /* font-weight: 500; */
+}
+
+label {
+  font-size: 20px;
+  display: inline-block;
+}
+
+input {
+  display: block;
+  height: 50px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+#username,
+#password {
+  border: 1px solid #149414;
+}
+
+#username:hover,
+#username:focus,
+#password:hover,
+#password:focus {
+  box-shadow: 0 2px 8px rgba(20, 148, 20, 0.3);
+}
+::placeholder {
+  color: #e5e5e5;
+}
+button {
+  margin-top: 25px;
+  width: 100%;
+  background-color: #19c219;
+  color: #f8f9fa !important;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid #19c219;
+  border-radius: 12px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: #08ec08;
+}
+
+.login {
+  background-color: #f8f9fa;
+  color: #149414 !important;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: 500;
+  border: 1px solid #149414;
+}
+
+.login:hover {
+  background-color: #149414;
+  color: #128308 !important;
+}
+
+.social {
+  margin-top: 30px;
+  display: flex;
+}
+.social div {
+  background: red;
+  width: 150px;
+  border-radius: 3px;
+  padding: 5px 10px 10px 5px;
+  background-color: rgb(150, 243, 150);
+  color: #128308;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+.social div:hover {
+  background-color: rgb(87, 228, 87);
+}
+.social .fb {
+  margin-left: 25px;
+}
+.social i {
+  margin-right: 4px;
+}
