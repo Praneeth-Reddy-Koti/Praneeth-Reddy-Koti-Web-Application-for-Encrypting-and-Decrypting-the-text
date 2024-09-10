@@ -19,9 +19,9 @@ This web application provides a robust platform for **encrypting and decrypting 
 
 ## 🛠️ Technology Stack
 - **Frontend:** HTML, CSS, JavaScript, Bootstrap
-- **Backend:** Flask (or Django if applicable)
+- **Backend:** Flask
 - **Encryption Algorithms:** AES, DES, Triple DES, Blowfish, RC4, Caesar Cipher, Railfence Columnar Transposition
-- **Database:** SQLite / MySQL (specify if used)
+- **Database:** MySQL
 - **Version Control:** Git
 
 ## 📸 Screenshots
